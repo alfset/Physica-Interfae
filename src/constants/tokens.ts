@@ -116,6 +116,20 @@ export const USDT_POLYGON = new Token(
   'USDT',
   'Tether USD'
 )
+export const USDT_PLANQ = new Token(
+  SupportedChainId.PLANQ,
+  '0xfD6fF17b542260f95660BBD71470Fe6eEC72801D',
+  6,
+  'USDT',
+  'Tether USD'
+)
+export const USDC_PLANQ = new Token(
+  SupportedChainId.PLANQ,
+  '0xfD6fF17b542260f95660BBD71470Fe6eEC72801D',
+  6,
+  'USDC',
+  'Planq USDC'
+)
 export const WBTC_POLYGON = new Token(
   SupportedChainId.POLYGON,
   '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
@@ -358,7 +372,7 @@ export const UNI: { [chainId: number]: Token } = {
   [SupportedChainId.MAINNET]: new Token(SupportedChainId.MAINNET, UNI_ADDRESS[1], 18, 'UNI', 'Uniswap'),
   [SupportedChainId.GOERLI]: new Token(SupportedChainId.GOERLI, UNI_ADDRESS[5], 18, 'UNI', 'Uniswap'),
 }
-const PLANQTEST_COIN = new Token(SupportedChainId.PLANQTEST, '0x0f265b48Bb6c3A7F8aC66A74eC765439cAAd9209', 18, 'PLANQ', 'Planq')
+const PLANQ_COIN = new Token(SupportedChainId.PLANQ, '0x5EBCdf1De1781e8B5D41c016B0574aD53E2F6E1A', 18, 'PLANQ', 'Planq')
 export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } = {
   ...(WETH9 as Record<SupportedChainId, Token>),
   [SupportedChainId.OPTIMISM]: new Token(
@@ -424,9 +438,9 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'WBNB',
     'Wrapped BNB'
   ),
-  [SupportedChainId.PLANQTEST]: new Token(
-    SupportedChainId.PLANQTEST,
-    '0x0f265b48Bb6c3A7F8aC66A74eC765439cAAd9209',
+  [SupportedChainId.PLANQ]: new Token(
+    SupportedChainId.PLANQ,
+    '0x5EBCdf1De1781e8B5D41c016B0574aD53E2F6E1A',
     18,
     'WPLANQ',
     'Wrapped PLANQ'
@@ -448,8 +462,8 @@ function getCeloNativeCurrency(chainId: number) {
   }
 }
 
-function isPlanqtest(chainId: number): chainId is SupportedChainId.PLANQTEST | SupportedChainId.PLANQTEST {
-  return chainId === SupportedChainId.PLANQTEST || chainId === SupportedChainId.PLANQTEST
+function isPLANQ(chainId: number): chainId is SupportedChainId.PLANQ | SupportedChainId.PLANQ {
+  return chainId === SupportedChainId.PLANQ || chainId === SupportedChainId.PLANQ
 }
 
 class PlanqNativeCurrency extends NativeCurrency {
@@ -458,14 +472,14 @@ class PlanqNativeCurrency extends NativeCurrency {
   }
 
   get wrapped(): Token {
-    if (!isPlanqtest(this.chainId)) throw new Error('Not planq')
+    if (!isPLANQ(this.chainId)) throw new Error('Not planq')
     const wrapped = WRAPPED_NATIVE_CURRENCY[this.chainId]
     invariant(wrapped instanceof Token)
     return wrapped
   }
 
   public constructor(chainId: number) {
-    if (!isPlanqtest(chainId)) throw new Error('Not planq')
+    if (!isPLANQ(chainId)) throw new Error('Not planq')
     super(chainId, 18, 'PLANQ', 'Planq')
   }
 }
@@ -538,7 +552,7 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
     nativeCurrency = getCeloNativeCurrency(chainId)
   } else if (isBsc(chainId)) {
     nativeCurrency = new BscNativeCurrency(chainId)
-  } else if (isPlanqtest(chainId)) {
+  } else if (isPLANQ(chainId)) {
     nativeCurrency = new PlanqNativeCurrency(chainId)
   } else {
     nativeCurrency = ExtendedEther.onChain(chainId)

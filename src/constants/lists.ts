@@ -3,7 +3,7 @@ export const UNI_EXTENDED_LIST = 'https://gateway.ipfs.io/ipns/extendedtokens.un
 const UNI_UNSUPPORTED_LIST = 'https://gateway.ipfs.io/ipns/unsupportedtokens.uniswap.org'
 const AAVE_LIST = 'tokenlist.aave.eth'
 const BA_LIST = 'https://raw.githubusercontent.com/The-Blockchain-Association/sec-notice-list/master/ba-sec-list.json'
-export const PLANQTEST_LIST = 'https://raw.githubusercontent.com/alfset/top-holder-token/main/test-token.json'
+export const PLANQ_LIST = 'https://raw.githubusercontent.com/alfset/top-holder-token/main/test-token.json'
 const CMC_ALL_LIST = 'https://s3.coinmarketcap.com/generated/dex/tokens/eth-tokens-all.json'
 const COINGECKO_LIST = 'https://tokens.coingecko.com/uniswap/all.json'
 const COINGECKO_BNB_LIST = 'https://tokens.coingecko.com/binance-smart-chain/all.json'
@@ -21,7 +21,7 @@ export const PLASMA_BNB_LIST = 'https://raw.githubusercontent.com/plasmadlt/plas
 export const UNSUPPORTED_LIST_URLS: string[] = [BA_LIST, UNI_UNSUPPORTED_LIST]
 
 // default lists to be 'active' aka searched across
-export const DEFAULT_ACTIVE_LIST_URLS: string[] = [UNI_LIST, PLANQTEST_LIST]
+export const DEFAULT_ACTIVE_LIST_URLS: string[] = [UNI_LIST, PLANQ_LIST]
 export const DEFAULT_INACTIVE_LIST_URLS: string[] = [
   UNI_EXTENDED_LIST,
   COMPOUND_LIST,

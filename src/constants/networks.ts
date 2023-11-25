@@ -28,11 +28,11 @@ export const FALLBACK_URLS = {
     'https://rpc.ankr.com/eth',
     'https://eth-mainnet.public.blastapi.io',
   ],
-  [SupportedChainId.PLANQTEST]: [
+  [SupportedChainId.PLANQ]: [
     // "Safe" URLs
-    'https://test.rpc.evm.physica.finance',
+    'https://evm-rpc.planq.network',
     // "Fallback" URLs
-    'https://test.rpc.evm.physica.finance',
+    'https://evm-rpc.planq.network',
   ],
   [SupportedChainId.GOERLI]: [
     // "Safe" URLs
@@ -107,7 +107,7 @@ export const RPC_URLS = {
     ...FALLBACK_URLS[SupportedChainId.MAINNET],
   ],
   [SupportedChainId.GOERLI]: [`https://goerli.infura.io/v3/${INFURA_KEY}`, ...FALLBACK_URLS[SupportedChainId.GOERLI]],
-  [SupportedChainId.PLANQTEST]: [`https://test.rpc.evm.physica.finance`, ...FALLBACK_URLS[SupportedChainId.PLANQTEST]],
+  [SupportedChainId.PLANQ]: [`https://evm-rpc.planq.network`, ...FALLBACK_URLS[SupportedChainId.PLANQ]],
   [SupportedChainId.OPTIMISM]: [
     `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`,
     ...FALLBACK_URLS[SupportedChainId.OPTIMISM],

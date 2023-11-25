@@ -22,7 +22,7 @@ import ChainSelectorRow from './ChainSelectorRow'
 import { NavDropdown } from './NavDropdown'
 
 const NETWORK_SELECTOR_CHAINS = [
-  SupportedChainId.PLANQTEST,
+  SupportedChainId.PLANQ,
 ]
 
 interface ChainSelectorProps {

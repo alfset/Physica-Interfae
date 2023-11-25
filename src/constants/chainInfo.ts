@@ -72,10 +72,10 @@ const CHAIN_INFO: ChainInfoMap = {
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
     color: darkTheme.chain_1,
   },
-  [SupportedChainId.PLANQTEST]: {
+  [SupportedChainId.PLANQ]: {
     networkType: NetworkType.L1,
     docs: 'https://planq.network',
-    explorer: 'http://167.86.99.150:4000/',
+    explorer: 'https://evm.planq.network/',
     infoLink: 'https://planq.network',
     label: 'Planq',
     logoUrl: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/planq/images/planq.svg',
@@ -248,7 +248,7 @@ export function getChainInfo(chainId: any): any {
   return undefined
 }
 
-const MAINNET_INFO = CHAIN_INFO[SupportedChainId.PLANQTEST]
+const MAINNET_INFO = CHAIN_INFO[SupportedChainId.PLANQ]
 export function getChainInfoOrDefault(chainId: number | undefined) {
   return getChainInfo(chainId) ?? MAINNET_INFO
 }

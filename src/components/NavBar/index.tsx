@@ -66,14 +66,12 @@ export const PageTabs = () => {
       <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
         <Trans>Swap</Trans>
       </MenuItem>
-      <MenuItem href={`/tokens/${chainName.toLowerCase()}`} isActive={pathname.startsWith('/tokens')}>
-        <Trans>Tokens</Trans>
+      <MenuItem href={"https://evm.planq.network/address/0x5EBCdf1De1781e8B5D41c016B0574aD53E2F6E1A/write-contract#address-tabs"}>
+        <Trans>Stake</Trans>
       </MenuItem>
-      {!shouldDisableNFTRoutes && (
-        <MenuItem dataTestId="nft-nav" href="/nfts" isActive={isNftPage}>
-          <Trans>Bridge</Trans>
-        </MenuItem>
-      )}
+      <MenuItem href={"https://evm.planq.network/address/0x5EBCdf1De1781e8B5D41c016B0574aD53E2F6E1A/write-contract#address-tabs"}>
+        <Trans>Bridge</Trans>
+      </MenuItem>
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">
         <MenuItem href="/pools" dataTestId="pool-nav-link" isActive={isPoolActive}>
           <Trans>Pools</Trans>

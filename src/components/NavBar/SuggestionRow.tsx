@@ -184,7 +184,6 @@ export const TokenRow = ({ token, isHovered, setHoveredIndex, toggleOpen, index,
           <Box className={styles.secondaryText}>{token.symbol}</Box>
         </Column>
       </Row>
-
       <Column className={styles.suggestionSecondaryContainer}>
         {!!token.market?.price?.value && (
           <>

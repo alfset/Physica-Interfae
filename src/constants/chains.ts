@@ -27,6 +27,7 @@ export enum SupportedChainId {
 }
 
 export const CHAIN_IDS_TO_NAMES = {
+  [SupportedChainId.PLANQ]: 'PLANQ',
   [SupportedChainId.MAINNET]: 'mainnet',
   [SupportedChainId.GOERLI]: 'goerli',
   [SupportedChainId.POLYGON]: 'polygon',
@@ -38,7 +39,6 @@ export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.OPTIMISM]: 'optimism',
   [SupportedChainId.OPTIMISM_GOERLI]: 'optimism_goerli',
   [SupportedChainId.BNB]: 'bnb',
-  [SupportedChainId.PLANQ]: 'PLANQ',
 }
 
 /**

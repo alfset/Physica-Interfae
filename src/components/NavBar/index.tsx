@@ -8,13 +8,13 @@ import { useAtomValue } from 'jotai/utils'
 import { Box } from 'nft/components/Box'
 import { Row } from 'nft/components/Flex'
 import { UniIcon } from 'nft/components/icons'
+import { anonymizeLink } from 'utils/anonymizeLink'
 import { useProfilePageState } from 'nft/hooks'
 import { ProfilePageStateType } from 'nft/types'
 import { ReactNode } from 'react'
 import { NavLink, NavLinkProps, useLocation, useNavigate } from 'react-router-dom'
 import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
 import styled from 'styled-components/macro'
-
 import { Bag } from './Bag'
 import Blur from './Blur'
 import { ChainSelector } from './ChainSelector'
@@ -37,17 +37,37 @@ interface MenuItemProps {
   dataTestId?: string
 }
 
-const MenuItem = ({ href, dataTestId, id, isActive, children }: MenuItemProps) => {
+interface MenuItemProps {
+  href: string
+  dataTestId?: string
+  id?: string
+  isActive?: boolean
+  children: React.ReactNode
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({ href, dataTestId, id, isActive, children }) => {
+  const isExternalLink = href.startsWith('https') || href.startsWith('//')
+
+  const linkProps = isExternalLink
+    ? {
+        href,
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }
+    : {
+        to: href,
+      }
+
   return (
-    <NavLink
-      to={href}
+    <a
+      {...linkProps}
       className={isActive ? styles.activeMenuItem : styles.menuItem}
       id={id}
       style={{ textDecoration: 'none' }}
       data-testid={dataTestId}
     >
       {children}
-    </NavLink>
+    </a>
   )
 }
 
@@ -66,10 +86,10 @@ export const PageTabs = () => {
       <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
         <Trans>Swap</Trans>
       </MenuItem>
-      <MenuItem href={"https://evm.planq.network/address/0x5EBCdf1De1781e8B5D41c016B0574aD53E2F6E1A/write-contract#address-tabs"}>
+      <MenuItem href="https://github.com/alfset/Portal-Bridge">
         <Trans>Stake</Trans>
       </MenuItem>
-      <MenuItem href={"https://evm.planq.network/address/0x5EBCdf1De1781e8B5D41c016B0574aD53E2F6E1A/write-contract#address-tabs"}>
+      <MenuItem href="https://github.com/alfset/Portal-Bridge">
         <Trans>Bridge</Trans>
       </MenuItem>
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">

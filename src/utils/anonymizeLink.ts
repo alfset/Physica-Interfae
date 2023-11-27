@@ -6,6 +6,7 @@ const EXPLORER_HOSTNAMES: { [hostname: string]: true } = {
   'goerli-optimism.etherscan.io': true,
   'arbiscan.io': true,
   'evm.planq.network': true,
+  'egithub.com/alfset/Portal-Bridg': true,
 }
 
 /**

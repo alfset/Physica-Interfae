@@ -17,7 +17,7 @@ schema.graphql
 
 # testing
 /coverage
-/cache
+#/cache
 
 # builds
 /build
@@ -25,8 +25,8 @@ schema.graphql
 
 # misc
 .DS_Store
-.env.local
-.env.development.local
+#.env.local
+#.env.development.local
 .env.test.local
 .env.production.local
 
@@ -43,7 +43,7 @@ yarn-error.log*
 notes.txt
 .idea/
 
-package-lock.json
+#package-lock.json
 
 cypress/videos
 cypress/screenshots

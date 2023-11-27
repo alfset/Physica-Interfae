@@ -187,7 +187,7 @@ export const lightTheme: Theme = {
 
   userThemeColor: colors.magentaVibrant,
 
-  background: '#EDEFF8', //INTENTIONALLY OFF THEME TO GIVE WHITE BG A SOFTER VISUAL
+  background: '#FFF8DC', //INTENTIONALLY OFF THEME TO GIVE WHITE BG A SOFTER VISUAL
   backgroundBackdrop: colors.white,
   backgroundSurface: colors.white,
   backgroundModule: colors.gray50,

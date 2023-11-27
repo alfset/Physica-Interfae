@@ -82,6 +82,7 @@ const GQL_CHAINS: number[] = [
   SupportedChainId.POLYGON,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.CELO,
+  SupportedChainId.PLANQ,
 ]
 
 export function isGqlSupportedChain(chainId: number | undefined): chainId is SupportedChainId {

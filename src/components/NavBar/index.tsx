@@ -8,13 +8,13 @@ import { useAtomValue } from 'jotai/utils'
 import { Box } from 'nft/components/Box'
 import { Row } from 'nft/components/Flex'
 import { UniIcon } from 'nft/components/icons'
-import { anonymizeLink } from 'utils/anonymizeLink'
 import { useProfilePageState } from 'nft/hooks'
 import { ProfilePageStateType } from 'nft/types'
 import { ReactNode } from 'react'
-import { NavLink, NavLinkProps, useLocation, useNavigate } from 'react-router-dom'
+import { NavLinkProps, useLocation, useNavigate } from 'react-router-dom'
 import { shouldDisableNFTRoutesAtom } from 'state/application/atoms'
 import styled from 'styled-components/macro'
+
 import { Bag } from './Bag'
 import Blur from './Blur'
 import { ChainSelector } from './ChainSelector'
@@ -83,7 +83,7 @@ export const PageTabs = () => {
 
   return (
     <>
-      <MenuItem href="/swap" isActive={pathname.startsWith('/swap')}>
+      <MenuItem href="https://3000-alfset-physicainterfae-z1ncymx2xii.ws-us106.gitpod.io/#/swap">
         <Trans>Swap</Trans>
       </MenuItem>
       <MenuItem href="https://github.com/alfset/Portal-Bridge">
@@ -93,7 +93,7 @@ export const PageTabs = () => {
         <Trans>Bridge</Trans>
       </MenuItem>
       <Box display={{ sm: 'flex', lg: 'none', xxl: 'flex' }} width="full">
-        <MenuItem href="/pools" dataTestId="pool-nav-link" isActive={isPoolActive}>
+        <MenuItem href="https://5173-deltaswapio-deltaswap-vl9t8cfk52f.ws-us106.gitpod.io/">
           <Trans>Pools</Trans>
         </MenuItem>
       </Box>
@@ -122,10 +122,7 @@ const Navbar = ({ blur }: { blur: boolean }) => {
                 data-testid="uniswap-logo"
                 className={styles.logo}
                 onClick={() => {
-                  navigate({
-                    pathname: '/',
-                    search: '?intro=true',
-                  })
+                  window.location.href = 'https://5173-deltaswapio-deltaswap-vl9t8cfk52f.ws-us106.gitpod.io/'
                 }}
               />
             </Box>
